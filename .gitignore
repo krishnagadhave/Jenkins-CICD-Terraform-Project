@@ -1,0 +1,39 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Artifacts
+dist/
+build/
+*.tar.gz
+*.zip
+
+# Test Reports
+reports/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Keep lock file
+!.terraform.lock.hcl
+
+# Environment Files
+.env
+.env.local
+.env.*.local

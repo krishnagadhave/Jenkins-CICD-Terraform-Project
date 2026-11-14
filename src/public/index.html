@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Native CI/CD & Terraform Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-badge">
+          <span class="icon">🚀</span>
+          <div>
+            <h1>Cloud-Native CI/CD Pipeline</h1>
+            <p class="subtitle">Jenkins Automated Delivery &amp; Terraform Infrastructure as Code</p>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="student-card">
+          <div class="student-label">PROJECT SUBMISSION</div>
+          <div class="student-name">Krishna Gadhave</div>
+          <div class="student-prn">PRN: <span>202301040250</span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Pipeline Stage Visualization -->
+    <section class="card pipeline-card">
+      <div class="card-header">
+        <div class="title-with-badge">
+          <h2>Jenkins Declarative Pipeline</h2>
+          <span class="badge badge-success" id="pipeline-status">● BUILD #14 - SUCCESS</span>
+        </div>
+        <span class="timestamp" id="last-updated">Updating...</span>
+      </div>
+
+      <div class="stages-stepper">
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">1. Checkout SCM</span>
+            <span class="stage-duration">1.8s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">2. Dependencies</span>
+            <span class="stage-duration">4.2s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">3. Lint & Audit</span>
+            <span class="stage-duration">2.1s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">4. Unit Tests</span>
+            <span class="stage-duration">3.5s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">5. Build & Package</span>
+            <span class="stage-duration">2.9s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">6. Terraform Validate</span>
+            <span class="stage-duration">5.1s</span>
+          </div>
+        </div>
+        <div class="stage-connector active"></div>
+
+        <div class="stage-item completed">
+          <div class="stage-icon">✓</div>
+          <div class="stage-info">
+            <span class="stage-name">7. Automated Deploy</span>
+            <span class="stage-duration">4.0s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Grid -->
+    <div class="grid grid-4">
+      <div class="stat-card">
+        <span class="stat-label">HEALTH PROBE</span>
+        <div class="stat-value text-success" id="probe-health">UP (200 OK)</div>
+        <span class="stat-sub">Liveness endpoint active</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">READINESS PROBE</span>
+        <div class="stat-value text-success" id="probe-ready">READY</div>
+        <span class="stat-sub">Dependencies connected</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">SERVICE UPTIME</span>
+        <div class="stat-value" id="app-uptime">0s</div>
+        <span class="stat-sub" id="app-version">v1.2.0</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">TOTAL HTTP REQUESTS</span>
+        <div class="stat-value text-accent" id="app-requests">0</div>
+        <span class="stat-sub">Real-time counter</span>
+      </div>
+    </div>
+
+    <!-- Infrastructure & Live Telemetry -->
+    <div class="grid grid-2">
+      <!-- Terraform Provisioned Infrastructure -->
+      <section class="card">
+        <div class="card-header">
+          <h3>Terraform Infrastructure Topology</h3>
+          <span class="badge badge-accent">IaC AWS Architecture</span>
+        </div>
+        <div class="infra-list">
+          <div class="infra-row">
+            <span class="infra-key">Cloud Provider</span>
+            <span class="infra-val" id="infra-cloud">AWS (Amazon Web Services)</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">VPC Network</span>
+            <span class="infra-val code-text">10.0.0.0/16 (Custom VPC)</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Public Subnet</span>
+            <span class="infra-val code-text">10.0.1.0/24 (us-east-1a)</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Security Group</span>
+            <span class="infra-val code-text">app-sg (Ports 80, 3000, 22)</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Compute Target</span>
+            <span class="infra-val">EC2 Instance (t3.micro / Ubuntu 24.04)</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Provisioning State</span>
+            <span class="infra-val text-success">● Managed via Declarative Terraform</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Host Runtime Telemetry -->
+      <section class="card">
+        <div class="card-header">
+          <h3>Runtime & System Telemetry</h3>
+          <span class="badge badge-neutral">Node.js Engine</span>
+        </div>
+        <div class="infra-list">
+          <div class="infra-row">
+            <span class="infra-key">Host Platform</span>
+            <span class="infra-val" id="sys-platform">Loading...</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Node Runtime</span>
+            <span class="infra-val code-text" id="sys-node">Loading...</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Host IP</span>
+            <span class="infra-val code-text" id="sys-ip">127.0.0.1</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Memory Usage (RSS)</span>
+            <span class="infra-val" id="sys-memory">Calculating...</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">Git Commit Hash</span>
+            <span class="infra-val code-text" id="git-hash">e4f9b2a</span>
+          </div>
+          <div class="infra-row">
+            <span class="infra-key">CI/CD Engine</span>
+            <span class="infra-val text-accent">Jenkins Declarative Pipeline</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Live API Explorer & Chaos Injection -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Live Microservice Endpoints & Resilience Controls</h3>
+        <span class="badge badge-neutral">Interactive Testing</span>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="testEndpoint('/api/health')">Check /api/health</button>
+        <button class="btn btn-primary" onclick="testEndpoint('/api/ready')">Check /api/ready</button>
+        <button class="btn btn-primary" onclick="testEndpoint('/api/info')">Fetch /api/info</button>
+        <button class="btn btn-primary" onclick="testEndpoint('/api/metrics')">Fetch /api/metrics</button>
+        <button class="btn btn-primary" onclick="testEndpoint('/api/version')">Fetch /api/version</button>
+        <button class="btn btn-danger" onclick="triggerChaos()">Simulate Service Unhealthy</button>
+        <button class="btn btn-success" onclick="resetChaos()">Reset to Healthy</button>
+      </div>
+
+      <div class="response-viewer">
+        <div class="viewer-header">
+          <span class="viewer-title">HTTP Response Output: <span id="current-endpoint">/api/info</span></span>
+          <span class="viewer-status" id="response-code">Status: 200 OK</span>
+        </div>
+        <pre><code id="json-viewer">// Click any button above to inspect live API output...</code></pre>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        <strong>Cloud-Native Computing & DevOps</strong> • Jenkins CI/CD + Terraform Mini Project
+      </div>
+      <div>
+        Designed & Implemented by <strong>Krishna Gadhave</strong> (PRN: 202301040250)
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "cloud-native-cicd-app",
+  "version": "1.2.0",
+  "description": "Cloud Native Microservice with Jenkins CI/CD Pipeline & Terraform Infrastructure as Code",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node scripts/test-runner.js",
+    "lint": "node scripts/lint-check.js",
+    "build": "node scripts/build.js",
+    "ci": "npm run lint && npm run test && npm run build"
+  },
+  "keywords": [
+    "jenkins",
+    "cicd",
+    "pipeline",
+    "terraform",
+    "infrastructure-as-code",
+    "cloud-native",
+    "devops",
+    "microservices"
+  ],
+  "author": "Krishna Gadhave (PRN: 202301040250)",
+  "license": "MIT"
+}
