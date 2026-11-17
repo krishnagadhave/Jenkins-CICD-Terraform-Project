@@ -272,8 +272,8 @@
         <td>November 2026</td>
       </tr>
       <tr>
-        <td>Evaluation Status:</td>
-        <td>Complete & Verified (Level 5 Rubric Alignment)</td>
+        <td>Project Status:</td>
+        <td>Implemented, Tested &amp; Deployed</td>
       </tr>
     </table>
 
@@ -284,8 +284,8 @@
 
   <div class="page-break"></div>
 
-  <!-- TABLE OF CONTENTS & RUBRIC -->
-  <h1>1. Executive Summary & Grading Rubric Alignment</h1>
+  <!-- EXECUTIVE SUMMARY & DELIVERABLES -->
+  <h1>1. Executive Summary & Project Architecture</h1>
   <p>
     This project demonstrates an enterprise-grade cloud-native software delivery lifecycle. It integrates two foundational disciplines of modern DevOps: <strong>Continuous Integration / Continuous Deployment (CI/CD)</strong> powered by Jenkins, and <strong>Infrastructure as Code (IaC)</strong> managed through HashiCorp Terraform.
   </p>
@@ -293,42 +293,36 @@
   <table class="data-table">
     <thead>
       <tr>
-        <th>Rubric Criteria</th>
-        <th>Weight</th>
-        <th>Target Level</th>
-        <th>Implemented Project Deliverables</th>
+        <th>Domain / Architecture Area</th>
+        <th>Technologies Used</th>
+        <th>Key Capabilities & Implementation Details</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>1. Jenkins Configuration</strong></td>
-        <td>2 Marks (5 pts)</td>
-        <td><span class="badge-pass">5 / 5 (Level 5)</span></td>
-        <td>Configured pipeline job with Git SCM integration, branch specifier <code>*/main</code>, script path <code>Jenkinsfile</code>, and automated GitHub Webhook trigger.</td>
+        <td><strong>Source Control & Automation</strong></td>
+        <td>Git, GitHub, Webhooks</td>
+        <td>Automated repository integration with branch tracking (<code>*/main</code>), commit metadata extraction, and instantaneous GitHub webhook event triggering.</td>
       </tr>
       <tr>
-        <td><strong>2. Jenkinsfile / CI-CD Pipeline</strong></td>
-        <td>2 Marks (5 pts)</td>
-        <td><span class="badge-pass">5 / 5 (Level 5)</span></td>
-        <td>Declarative pipeline covering 7 distinct stages: SCM Checkout, Environment Check, Linting, Automated Tests, Build/Package, Terraform Validation, and Continuous Deployment.</td>
+        <td><strong>Declarative CI/CD Pipeline</strong></td>
+        <td>Jenkins Declarative Pipeline</td>
+        <td>7-stage quality gate covering SCM checkout, environment check, AST linting, unit/integration testing, artifact packaging, Terraform validation, and automated deployment.</td>
       </tr>
       <tr>
-        <td><strong>3. CI/CD Execution</strong></td>
-        <td>2 Marks (5 pts)</td>
-        <td><span class="badge-pass">5 / 5 (Level 5)</span></td>
-        <td>12/12 automated unit and integration tests passing; automated generation of <code>reports/junit.xml</code>; archiving fingerprinted production bundles in <code>dist/</code>.</td>
+        <td><strong>Automated Testing & QA</strong></td>
+        <td>Node.js Test Runner, JUnit XML</td>
+        <td>12 automated test cases with 100% pass rate; generation of standardized <code>reports/junit.xml</code> for Jenkins test trend visualization; static security auditing.</td>
       </tr>
       <tr>
-        <td><strong>4. Terraform Configuration</strong></td>
-        <td>2 Marks (5 pts)</td>
-        <td><span class="badge-pass">5 / 5 (Level 5)</span></td>
-        <td>Modular and reusable HCL manifests (VPC, Subnet, Security Group, EC2, Cloud-Init bootstrap). Passed <code>terraform fmt -check</code> and <code>terraform validate</code>.</td>
+        <td><strong>Infrastructure as Code (IaC)</strong></td>
+        <td>HashiCorp Terraform, AWS</td>
+        <td>Modular HCL configuration provisioning AWS VPC, Internet Gateway, public subnet, security group firewalls, and EC2 compute with automated cloud-init bootstrap.</td>
       </tr>
       <tr>
-        <td><strong>5. Demonstration & Defense</strong></td>
-        <td>5 Points</td>
-        <td><span class="badge-pass">5 / 5 (Level 5)</span></td>
-        <td>Structured 5–7 min timestamped presentation script with screen cues, deep architectural explanations, and viva examination answers.</td>
+        <td><strong>Cloud-Native Microservice</strong></td>
+        <td>Node.js, REST API, HTML5/CSS3</td>
+        <td>Zero-dependency lightweight service exposing liveness/readiness probes (<code>/api/health</code>, <code>/api/ready</code>), real-time telemetry, and an interactive web dashboard.</td>
       </tr>
     </tbody>
   </table>
@@ -497,7 +491,7 @@
 
   <h1>6. Video Demonstration Script & Oral Defense Guide</h1>
   <p>
-    The recorded demonstration is structured into a 5-to-7 minute presentation designed to maximize points under the "Demonstration" rubric:
+    The recorded demonstration is structured into a 5-to-7 minute presentation designed to explain the end-to-end architecture and infrastructure provisioning workflow:
   </p>
   <ul style="margin-left: 20px; line-height: 1.6;">
     <li><strong>0:00 - 0:50 | Introduction:</strong> Student introduction (Krishna Gadhave, PRN: 202301040250), project goals, and overview of CI/CD + IaC.</li>
