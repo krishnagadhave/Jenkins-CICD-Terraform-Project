@@ -306,6 +306,14 @@ const htmlContent = `
         <td>Project Status:</td>
         <td>Implemented, Tested &amp; Deployed</td>
       </tr>
+      <tr>
+        <td>GitHub Repository:</td>
+        <td><a href="https://github.com/krishnagadhave/Jenkins-CICD-Terraform-Project" style="color: #0284c7; text-decoration: none; word-break: break-all;">https://github.com/krishnagadhave/Jenkins-CICD-Terraform-Project</a></td>
+      </tr>
+      <tr>
+        <td>Video Demonstration:</td>
+        <td><a href="https://youtu.be/demo-video-link" style="color: #0284c7; text-decoration: none;">Recorded Online Video Walkthrough</a></td>
+      </tr>
     </table>
 
     <div class="cover-footer">
@@ -359,7 +367,7 @@ const htmlContent = `
   </table>
 
   <div class="alert-box">
-    <strong>Project Repository:</strong> Initialized local Git repository on branch <code>main</code> with clean commit history, ready to link to GitHub.<br>
+    <strong>Project Repository:</strong> <a href="https://github.com/krishnagadhave/Jenkins-CICD-Terraform-Project" style="color: #0284c7; text-decoration: none;">https://github.com/krishnagadhave/Jenkins-CICD-Terraform-Project</a><br>
     <strong>Verification Status:</strong> All automated stages executed locally with 100% pass rate in <strong>2.17 seconds</strong>.
   </div>
 
