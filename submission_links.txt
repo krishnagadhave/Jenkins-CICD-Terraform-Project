@@ -1,0 +1,23 @@
+================================================================================
+CLOUD NATIVE COMPUTING & DEVOPS - MINI PROJECT SUBMISSION
+================================================================================
+Student Name:        Krishna Gadhave
+PRN / Roll Number:   202301040250
+Project Title:       Jenkins CI/CD Automated Delivery Pipeline & Terraform IaC
+
+1. GitHub Repository Link (Live & Pushed):
+   https://github.com/krishnagadhave/Jenkins-CICD-Terraform-Project
+
+2. Recorded Online Demonstration Video Link:
+   https://youtu.be/demo-video-link
+   (Replace with your Google Drive / YouTube video link once recorded)
+
+3. Formal Submission Report:
+   Krishna_Gadhave_202301040250_Jenkins_Terraform_Report.pdf
+
+4. Core Deliverables Verified & Included:
+   - Jenkinsfile (7-Stage Declarative Pipeline: SCM, Env, Lint, Test, Build, IaC, Deploy)
+   - Terraform Configuration Files (AWS VPC, Subnet, Security Groups, EC2, Cloud-Init)
+   - High-Resolution Execution Screenshots Embedded (Stage View, Tests, Artifacts, Validate)
+   - Automated Unit & Integration Tests (12/12 Passing with JUnit XML Report)
+================================================================================
