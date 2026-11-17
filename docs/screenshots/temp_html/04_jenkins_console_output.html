@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0c1017; color: #e6edf3; font-family: "JetBrains Mono", Consolas, monospace; padding: 20px; font-size: 13px; line-height: 1.5; }
+  .header { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; color: #8b949e; }
+  .header strong { color: #58a6ff; }
+  .log-line { white-space: pre-wrap; margin-bottom: 2px; }
+  .text-cyan { color: #39c5bb; }
+  .text-green { color: #3fb950; font-weight: bold; }
+  .text-yellow { color: #d29922; }
+  .text-blue { color: #58a6ff; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div><strong>Jenkins Build Console Output</strong> - Build #1 [cloud-native-cicd-pipeline]</div>
+    <div>Student: <strong>Krishna Gadhave (202301040250)</strong></div>
+  </div>
+  <div class="log-line">Started by GitHub push by Krishna Gadhave</div>
+  <div class="log-line">Running as SYSTEM on Node: built-in in workspace /var/jenkins_home/workspace/cloud-native-cicd</div>
+  <div class="log-line text-cyan">[STAGE 1] Checking Out Source Code Repository</div>
+  <div class="log-line"> > git rev-parse --is-inside-work-tree # timeout=10</div>
+  <div class="log-line"> > git checkout -f f4b7a13</div>
+  <div class="log-line text-green">✔ Git Repository detected: Branch: main, Commit: f4b7a13</div>
+  <div class="log-line text-cyan">[STAGE 2] Verifying System Tooling & Runtime Dependencies</div>
+  <div class="log-line">Node Version:      v22.14.0 | NPM Version: 10.9.2</div>
+  <div class="log-line">Terraform Version: Terraform v1.14.5 on windows_amd64</div>
+  <div class="log-line text-cyan">[STAGE 3] Executing Static Code Quality & Security Auditing</div>
+  <div class="log-line">  ✔ [LINT PASS] Syntax valid: src/server.js, package.json, scripts/test-runner.js</div>
+  <div class="log-line text-green">🎉 Code quality check passed with 0 violations.</div>
+  <div class="log-line text-cyan">[STAGE 4] Executing Unit & Integration Test Suites</div>
+  <div class="log-line">  ✔ [PASS] Liveness Probe (/api/health) Returns 200 OK & Status UP</div>
+  <div class="log-line">  ✔ [PASS] Readiness Probe (/api/ready) Returns Dependencies State</div>
+  <div class="log-line">  ✔ [PASS] Telemetry Endpoint (/api/info) Provides Complete Student Metadata</div>
+  <div class="log-line">  ✔ [PASS] Security Headers are Injected into Responses</div>
+  <div class="log-line text-green">🏁 Total Tests: 12 | Passed: 12 | Failed: 0 | Duration: 0.015s</div>
+  <div class="log-line">📄 Saved JUnit XML test report to: reports/junit.xml</div>
+  <div class="log-line text-cyan">[STAGE 5] Bundling Production Artifacts & Release Tarball</div>
+  <div class="log-line">✔ Release artifact archived at: dist/cloud-native-cicd-app-v1.2.0-build1.tar.gz</div>
+  <div class="log-line text-cyan">[STAGE 6] Validating Infrastructure as Code (Terraform)</div>
+  <div class="log-line text-green">✔ Terraform canonical formatting: CLEAN</div>
+  <div class="log-line text-green">Success! The configuration is valid.</div>
+  <div class="log-line text-cyan">[STAGE 7] Executing Automated Continuous Deployment & Smoke Test</div>
+  <div class="log-line">  ✔ Health Probe (GET /api/health) returned 200 OK - Status: UP</div>
+  <div class="log-line text-green">🎉 DEPLOYMENT VERIFICATION PASSED (100% HEALTHY)</div>
+  <div class="log-line">[POST-BUILD] Recording test results: reports/junit.xml</div>
+  <div class="log-line">[POST-BUILD] Archiving artifacts: dist/**/*</div>
+  <div class="log-line text-green">Finished: SUCCESS</div>
+</body>
+</html>

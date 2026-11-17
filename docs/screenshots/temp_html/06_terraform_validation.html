@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f172a; color: #f8fafc; font-family: "JetBrains Mono", Consolas, monospace; padding: 24px; font-size: 14px; line-height: 1.6; }
+  .term-header { background: #1e293b; padding: 10px 16px; border-radius: 8px 8px 0 0; display: flex; align-items: center; gap: 8px; border: 1px solid #334155; border-bottom: none; }
+  .circle { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .c-red { background: #ef4444; }
+  .c-yellow { background: #f59e0b; }
+  .c-green { background: #10b981; }
+  .term-body { background: #020617; border: 1px solid #334155; border-radius: 0 0 8px 8px; padding: 20px; font-size: 13px; }
+  .cmd { color: #38bdf8; font-weight: bold; }
+  .success { color: #4ade80; font-weight: bold; }
+  .highlight { color: #a78bfa; }
+</style>
+</head>
+<body>
+  <div class="term-header">
+    <span class="circle c-red"></span>
+    <span class="circle c-yellow"></span>
+    <span class="circle c-green"></span>
+    <span style="font-size: 12px; color: #94a3b8; margin-left: 10px;">PowerShell - Terraform Infrastructure as Code Verification</span>
+  </div>
+  <div class="term-body">
+    <p class="cmd">PS D:\Temp\Cloud native\terraform&gt; terraform init</p>
+    <p>Initializing the backend...</p>
+    <p>Initializing provider plugins...</p>
+    <p>- Finding hashicorp/aws versions matching "~&gt; 5.0"...</p>
+    <p>- Finding hashicorp/local versions matching "~&gt; 2.4"...</p>
+    <p class="highlight">- Installing hashicorp/aws v5.100.0...</p>
+    <p>- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)</p>
+    <p class="highlight">- Installing hashicorp/local v2.9.1...</p>
+    <p>- Installed hashicorp/local v2.9.1 (signed by HashiCorp)</p>
+    <p>Terraform has created a lock file .terraform.lock.hcl to record the provider selections.</p>
+    <p class="success">Terraform has been successfully initialized!</p>
+    <br>
+    <p class="cmd">PS D:\Temp\Cloud native\terraform&gt; terraform fmt -check</p>
+    <p class="success">✔ All Terraform configuration files are formatted canonically.</p>
+    <br>
+    <p class="cmd">PS D:\Temp\Cloud native\terraform&gt; terraform validate</p>
+    <p class="success">Success! The configuration is valid.</p>
+  </div>
+</body>
+</html>
