@@ -1,4 +1,4 @@
-﻿# Terraform Infrastructure as Code Verification Script (PowerShell)
+# Terraform Infrastructure as Code Verification Script (PowerShell)
 # Used in Jenkins Pipeline Terraform Validation Stage
 $ErrorActionPreference = "Stop"
 

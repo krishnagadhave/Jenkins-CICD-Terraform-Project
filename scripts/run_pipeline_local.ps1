@@ -1,4 +1,4 @@
-﻿# Local Jenkins Pipeline Runner & Verification Harness (PowerShell)
+# Local Jenkins Pipeline Runner & Verification Harness (PowerShell)
 # Simulates the complete Jenkins Declarative Pipeline locally
 $ErrorActionPreference = "Stop"
 
@@ -12,19 +12,16 @@ $rootDir = Split-Path -Parent $PSScriptRoot
 
 # Stage 1: Checkout SCM
 Write-Host "`n>>> [STAGE 1/7] CHECKOUT SCM <<<" -ForegroundColor Yellow
-try {
-    $branch = git rev-parse --abbrev-ref HEAD 2>$null
-    $commit = git rev-parse --short HEAD 2>$null
-    Write-Host "✔ Git Repository detected: Branch: $branch, Commit: $commit" -ForegroundColor Green
-} catch {
-    Write-Host "ℹ Running in local workspace (git not initialized or initial commit pending)" -ForegroundColor DarkGray
-}
+$branch = (git rev-parse --abbrev-ref HEAD)
+$commit = (git rev-parse --short HEAD)
+Write-Host "✔ Git Repository detected: Branch: $branch, Commit: $commit" -ForegroundColor Green
 
 # Stage 2: Environment Check
 Write-Host "`n>>> [STAGE 2/7] ENVIRONMENT & TOOLING CHECK <<<" -ForegroundColor Yellow
 Write-Host "Node.js:   $(node -v)" -ForegroundColor Green
 Write-Host "NPM:       $(npm -v)" -ForegroundColor Green
-Write-Host "Terraform: $(terraform -version | Select-Object -First 1)" -ForegroundColor Green
+$tfVer = (terraform -version | Select-Object -First 1)
+Write-Host "Terraform: $tfVer" -ForegroundColor Green
 
 # Stage 3: Static Code Analysis & Linting
 Write-Host "`n>>> [STAGE 3/7] CODE QUALITY & LINTING <<<" -ForegroundColor Yellow

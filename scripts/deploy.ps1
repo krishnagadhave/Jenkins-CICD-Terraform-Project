@@ -1,4 +1,4 @@
-﻿# Automated Deployment & Health Verification Script (PowerShell)
+# Automated Deployment & Health Verification Script (PowerShell)
 # Used in Jenkins Pipeline Deployment Stage or standalone execution
 param (
     [string]$TargetEnv = "production",
